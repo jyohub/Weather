@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="WeatherViewController" title="Weather" id="BYZ-38-t0r" customClass="WeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqH-4H-2UX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Dr-B6-9Ci">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="487"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="487" id="eMG-hx-69X"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LJb-il-g01">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="Bx5-91-rQs"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="6pQ-lo-fHb"/>
+                                        </connections>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phF-o0-XUZ">
+                                        <rect key="frame" x="16" y="532" width="382" height="50"/>
+                                        <color key="backgroundColor" red="0.33333333333333331" green="0.6705882352941176" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="yzf-mf-ANi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="  Change Background" image="photo" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeBackground:" destination="BYZ-38-t0r" eventType="touchUpInside" id="get-o3-fSr"/>
+                                        </connections>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="MD5-gF-SLl">
+                                        <rect key="frame" x="0.0" y="495" width="414" height="7"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="7" id="es1-24-RNf"/>
+                                        </constraints>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.93725490196078431" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="phF-o0-XUZ" secondAttribute="trailing" constant="16" id="1tH-Ow-xyE"/>
+                                    <constraint firstItem="6Dr-B6-9Ci" firstAttribute="top" secondItem="NqH-4H-2UX" secondAttribute="top" id="358-TH-wH5"/>
+                                    <constraint firstItem="6Dr-B6-9Ci" firstAttribute="leading" secondItem="NqH-4H-2UX" secondAttribute="leading" id="7gE-vI-FRC"/>
+                                    <constraint firstAttribute="trailing" secondItem="MD5-gF-SLl" secondAttribute="trailing" id="BGu-sW-swb"/>
+                                    <constraint firstItem="MD5-gF-SLl" firstAttribute="top" secondItem="6Dr-B6-9Ci" secondAttribute="bottom" constant="8" symbolic="YES" id="Qug-BW-8Lk"/>
+                                    <constraint firstItem="phF-o0-XUZ" firstAttribute="leading" secondItem="NqH-4H-2UX" secondAttribute="leading" constant="16" id="ZCi-Gr-G4v"/>
+                                    <constraint firstItem="MD5-gF-SLl" firstAttribute="leading" secondItem="NqH-4H-2UX" secondAttribute="leading" id="ezn-Va-rXF"/>
+                                    <constraint firstItem="phF-o0-XUZ" firstAttribute="top" secondItem="MD5-gF-SLl" secondAttribute="bottom" constant="30" id="geF-cG-heg"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Dr-B6-9Ci" secondAttribute="trailing" id="s2n-Hw-ZbC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NqH-4H-2UX" secondAttribute="bottom" id="L3U-B2-YBq"/>
+                            <constraint firstItem="NqH-4H-2UX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WAh-sG-QBf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NqH-4H-2UX" secondAttribute="trailing" id="eVt-9G-qpn"/>
+                            <constraint firstItem="NqH-4H-2UX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gdW-6t-RbV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gpE-VI-j0q"/>
+                    <connections>
+                        <outlet property="collectionView" destination="6Dr-B6-9Ci" id="CZ7-Xb-EzG"/>
+                        <outlet property="pageControl" destination="MD5-gF-SLl" id="fQH-E8-P08"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+    </resources>
+</document>

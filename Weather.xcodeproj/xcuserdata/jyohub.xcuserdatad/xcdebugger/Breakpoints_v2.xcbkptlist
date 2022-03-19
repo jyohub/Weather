@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A5FF78F0-1A47-4FE4-A1EB-39E3532B3414"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E45076C2-1D03-4BF5-9430-82ABD05E531B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherTests/WeatherViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "testSuccessfulLocationFetch()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E45076C2-1D03-4BF5-9430-82ABD05E531B - 3257a4a1154543c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherTests.WeatherViewModelTests.testSuccessfulWeatherResponse() throws -&gt; ()"
+                  moduleName = "WeatherTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyohub/A/Repos/Weather/WeatherTests/WeatherViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "904">
+               </Location>
+               <Location
+                  uuid = "E45076C2-1D03-4BF5-9430-82ABD05E531B - f2277ee3a5f804ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherTests.WeatherViewModelTests.testSuccessfulLocationFetch() throws -&gt; ()"
+                  moduleName = "WeatherTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyohub/A/Repos/Weather/WeatherTests/WeatherViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "760">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
