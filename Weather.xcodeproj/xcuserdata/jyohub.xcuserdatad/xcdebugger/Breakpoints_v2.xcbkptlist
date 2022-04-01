@@ -21,7 +21,7 @@
             <Locations>
                <Location
                   uuid = "E45076C2-1D03-4BF5-9430-82ABD05E531B - 3257a4a1154543c8"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "WeatherTests.WeatherViewModelTests.testSuccessfulWeatherResponse() throws -&gt; ()"
@@ -36,7 +36,7 @@
                </Location>
                <Location
                   uuid = "E45076C2-1D03-4BF5-9430-82ABD05E531B - f2277ee3a5f804ca"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "WeatherTests.WeatherViewModelTests.testSuccessfulLocationFetch() throws -&gt; ()"
@@ -50,6 +50,22 @@
                   offsetFromSymbolStart = "760">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCB584C5-CD58-43F8-B00D-53844A9F5D86"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/ViewController/WeatherViewController+CollectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "moveToNearestCell()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

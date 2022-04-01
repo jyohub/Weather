@@ -20,8 +20,6 @@ class WeatherViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
 
     var viewModel: WeatherViewModelProtocol?
-    var currentWeather: Weather?
-    var errorMessage: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +82,6 @@ extension WeatherViewController {
                 self?.activityIndicatorManager.showActivityIndicator()
             case .failed(let error):
                 self?.activityIndicatorManager.hideActivityIndicator()
-                self?.errorMessage = error.errorDescription
                 switch error {
                 case .unauthorized:
                     self?.displayErorMessage(errorMessage: error.errorDescription)
@@ -100,7 +97,6 @@ extension WeatherViewController {
     
     private func bindCurrentWeatherFetch() {
         viewModel?.currentWeather.sink { [weak self] currentWeather in
-            self?.currentWeather = currentWeather
             self?.activityIndicatorManager.hideActivityIndicator()
             self?.collectionView.reloadData()
         }.store(in: &cancellables)
@@ -108,7 +104,7 @@ extension WeatherViewController {
     
     private func bindErrorMessage() {
         viewModel?.errorMessage.sink { [weak self] errorMessage in
-            self?.errorMessage = errorMessage
+            guard let errorMessage = errorMessage else { return }
             self?.activityIndicatorManager.hideActivityIndicator()
             self?.displayErorMessage(errorMessage: errorMessage)
             self?.collectionView.reloadData()

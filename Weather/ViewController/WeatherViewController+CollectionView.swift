@@ -17,19 +17,19 @@ extension WeatherViewController: UICollectionViewDataSource {
         switch indexPath.row {
         case WeatherWidgetType.small.rawValue:
             let cell = collectionView.dequeueCell(for: indexPath, cell: WeatherWidgetSmallCollectionViewCell.self)
-            cell.setCurrentWeather(weather: self.currentWeather, errorMessage: self.errorMessage)
+            cell.setCurrentWeather(weather: viewModel?.currentWeather.value, errorMessage: viewModel?.errorMessage.value)
             return cell
         case WeatherWidgetType.medium.rawValue:
             let cell = collectionView.dequeueCell(for: indexPath, cell: WeatherWidgetMediumCollectionViewCell.self)
-            cell.setCurrentWeather(weather: self.currentWeather, errorMessage: self.errorMessage)
+            cell.setCurrentWeather(weather: viewModel?.currentWeather.value, errorMessage: viewModel?.errorMessage.value)
             return cell
         case WeatherWidgetType.large.rawValue:
             let cell = collectionView.dequeueCell(for: indexPath, cell: WeatherWidgetLargeCollectionViewCell.self)
-            cell.setCurrentWeather(weather: self.currentWeather, errorMessage: self.errorMessage)
+            cell.setCurrentWeather(weather: viewModel?.currentWeather.value, errorMessage: viewModel?.errorMessage.value)
             return cell
         default:
             let cell = collectionView.dequeueCell(for: indexPath, cell: WeatherWidgetSmallCollectionViewCell.self)
-            cell.setCurrentWeather(weather: self.currentWeather, errorMessage: self.errorMessage)
+            cell.setCurrentWeather(weather: viewModel?.currentWeather.value, errorMessage: viewModel?.errorMessage.value)
             return cell
         }
     }

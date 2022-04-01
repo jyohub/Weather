@@ -11,8 +11,8 @@ import CoreLocation
 
 protocol WeatherViewModelProtocol {
     var locationFetchState: CurrentValueSubject<LocationFetchState, Never> { set get }
-    var currentWeather: PassthroughSubject<Weather?, Never> { set get }
-    var errorMessage: PassthroughSubject<String?, Never> { set get }
+    var currentWeather: CurrentValueSubject<Weather?, Never> { set get }
+    var errorMessage: CurrentValueSubject<String?, Never> { set get }
     var widgetTypes: [WeatherWidgetType] { get }
 
     func fetchLocation()
@@ -28,9 +28,10 @@ enum LocationFetchState: Equatable {
 class WeatherViewModel: ObservableObject, WeatherViewModelProtocol {
     
     var locationFetchState: CurrentValueSubject<LocationFetchState, Never> = .init(.isLoading)
-    var currentWeather: PassthroughSubject<Weather?, Never> = .init()
-    var errorMessage: PassthroughSubject<String?, Never> = .init()
+    var currentWeather: CurrentValueSubject<Weather?, Never> = .init(nil)
+    var errorMessage: CurrentValueSubject<String?, Never> = .init(nil)
     
+    private(set) var weather: Weather?
     private var location: CLLocation?
     private var cancellables = Set<AnyCancellable>()
 
@@ -74,10 +75,12 @@ class WeatherViewModel: ObservableObject, WeatherViewModelProtocol {
                 switch result {
                 case .success(let weather):
                     print(weather)
+                    self?.weather = weather
                     self?.currentWeather.send(weather)
                     NotificationCenter.default.post(name: .weatherUpdated, object: self?.currentWeather)
                 case .failure(let error):
                     guard let error = error as? APIError else  { return }
+                    self?.weather = nil
                     self?.errorMessage.send(error.errorDescription)
                 }
             }).store(in: &cancellables)
